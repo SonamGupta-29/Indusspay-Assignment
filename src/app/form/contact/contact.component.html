@@ -1,0 +1,49 @@
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Contact</a>
+          <form class="d-flex">
+            <button class="btn btn-success" type="submit" routerLink="/form/create">Add+</button>
+          </form>
+        </div>
+      </nav>
+
+      <!-- table -->
+<div class="table" style="overflow-x:auto;">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">CreatedAt</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email_id</th>
+          <th scope="col">Age</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Mobile_no</th>
+          <th scope="col">Pan_no</th>
+          <th scope="col">Adhaar_no</th>
+          <th scope="col">Status</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of allformdata">
+          <th scope="row">{{ item.id }}</th>
+          <td>{{ item.createdAt }}</td>
+          <td>{{ item.first_name }}</td>
+          <td>{{ item.last_name }}</td>
+          <td>{{ item.emailId }}</td>
+          <td>{{ item.age }}</td>
+          <td>{{ item.gender }}</td>
+          <td>{{ item.mobilenumber }}</td>
+          <td>{{ item.pan_no }}</td>
+          <td>{{ item.adhaar_no }}</td>
+          <td>{{ item.status }}</td>
+          <td><a href="" class="btn btn-primary" [routerLink]="['/form/edit', item.id]">Edit</a></td>
+          <td><a href="" class="btn btn-primary" (click)="deleteItem(item.id)">Delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
